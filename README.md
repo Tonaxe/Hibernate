@@ -1,1 +1,1 @@
-Implementació de acces a la base de dades amb las funcions de veure les dades de la DB, pujar dades a la DB y borra dades de la DB
+Implementació de l'accés a la base de dades amb les funcions de veure les dades de la BD, pujar dades a la BD i eliminar dades de la BD.
