@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.example.Entities">
+    <class name="Plays" table="plays">
+        <composite-id>
+            <key-property name="matchCode" column="match_code"/>
+            <key-property name="playerId" column="player_id"/>
+        </composite-id>
+        <property name="starts" column="starts"/>
+        <property name="substituted" column="substituted"/>
+        <property name="goals" column="goals"/>
+        <property name="yellow" column="yellow"/>
+        <property name="red" column="red"/>
+    </class>
+</hibernate-mapping>

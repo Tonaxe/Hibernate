@@ -1,0 +1,5 @@
+1,Real Madrid,Santiago Bernabeu,Madrid
+2,FC Barcelona,Camp Nou,Barcelona
+3,Manchester United,Old Trafford,Manchester
+4,Liverpool,Anfield,Liverpool
+5,Juventus,Allianz Stadium,Turin
