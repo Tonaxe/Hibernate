@@ -1,0 +1,30 @@
+CREATE DATABASE fut10
+
+CREATE TABLE Team (
+    code SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    stadium VARCHAR(100),
+    city VARCHAR(100)
+);
+
+CREATE TABLE Match (
+    code SERIAL PRIMARY KEY,
+    played DATE NOT NULL
+);
+
+CREATE TABLE Plays (
+    match_code INTEGER REFERENCES Match(code),
+    player_id INTEGER REFERENCES Player(id),
+    starts INTEGER,
+    substituted INTEGER,
+    goals INTEGER,
+    yellow INTEGER,
+    red BOOLEAN,
+    PRIMARY KEY (match_code, player_id)
+);
+
+CREATE TABLE Player (
+    id SERIAL PRIMARY KEY,
+    surname VARCHAR(100) NOT NULL,
+    forename VARCHAR(100) NOT NULL
+);
