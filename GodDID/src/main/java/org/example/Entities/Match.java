@@ -14,7 +14,6 @@ public class Match {
     public Match() {
     }
 
-    // Getters y setters
 
     public int getCode() {
         return code;
