@@ -16,7 +16,6 @@ public class MainApp {
             throw new ExceptionInInitializerError(ex);
         }
 
-        // Crear una instancia de FileAccessor para manejar las operaciones con la base de datos
         FileAccessor fileAccessor;
         try {
             fileAccessor = new FileAccessor();
@@ -25,11 +24,9 @@ public class MainApp {
             return;
         }
 
-        // Mostrar el menú y ejecutar las acciones según la selección del usuario
         Menu menu = new Menu(fileAccessor);
         menu.mostrarMenu();
 
-        // Cerrar la conexión al finalizar
         fileAccessor.closeConnection();
     }
 }
