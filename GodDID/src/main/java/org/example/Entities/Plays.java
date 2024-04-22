@@ -23,8 +23,6 @@ public class Plays implements Serializable{
     public Plays() {
     }
 
-    // Getters y setters
-
     public int getMatchCode() {
         return matchCode;
     }
