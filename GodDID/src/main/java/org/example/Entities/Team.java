@@ -16,8 +16,6 @@ public class Team {
     public Team() {
     }
 
-    // Getters y setters
-
     public int getCode() {
         return code;
     }
