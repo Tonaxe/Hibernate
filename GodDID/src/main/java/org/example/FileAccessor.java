@@ -30,7 +30,6 @@ public class FileAccessor {
         connection = DriverManager.getConnection(url, user, password);
     }
 
-    // Métodos para leer los archivos y cargar los datos en las listas
 
     public void readTeamsFile(String filename) throws IOException, SQLException {
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
@@ -99,7 +98,6 @@ public class FileAccessor {
         }
     }
 
-    // Métodos para insertar datos en la base de datos
 
     private void insertTeam(int code, String name, String stadium, String city) throws SQLException {
         String query = "INSERT INTO team (code, name, stadium, city) VALUES (?, ?, ?, ?)";
@@ -148,25 +146,21 @@ public class FileAccessor {
 
     public void borrarDatos() throws SQLException {
         try {
-            // Eliminar datos de la tabla de jugadas (plays)
             String deletePlaysQuery = "DELETE FROM plays";
             try (PreparedStatement statement = connection.prepareStatement(deletePlaysQuery)) {
                 statement.executeUpdate();
             }
 
-            // Eliminar datos de la tabla de partidos (match)
             String deleteMatchesQuery = "DELETE FROM match";
             try (PreparedStatement statement = connection.prepareStatement(deleteMatchesQuery)) {
                 statement.executeUpdate();
             }
 
-            // Eliminar datos de la tabla de equipos (team)
             String deleteTeamsQuery = "DELETE FROM team";
             try (PreparedStatement statement = connection.prepareStatement(deleteTeamsQuery)) {
                 statement.executeUpdate();
             }
 
-            // Eliminar datos de la tabla de jugadores (player)
             String deletePlayersQuery = "DELETE FROM player";
             try (PreparedStatement statement = connection.prepareStatement(deletePlayersQuery)) {
                 statement.executeUpdate();
@@ -184,13 +178,11 @@ public class FileAccessor {
             ResultSetMetaData metaData = resultSet.getMetaData();
             int columnCount = metaData.getColumnCount();
 
-            // Imprimir los nombres de las columnas
             for (int i = 1; i <= columnCount; i++) {
                 System.out.print(metaData.getColumnName(i) + "\t");
             }
             System.out.println();
 
-            // Imprimir los datos
             while (resultSet.next()) {
                 for (int i = 1; i <= columnCount; i++) {
                     System.out.print(resultSet.getString(i) + "\t");
@@ -203,7 +195,6 @@ public class FileAccessor {
     }
 
 
-    // Métodos CRUD para insertar, mostrar y borrar datos en la base de datos
 
     public void closeConnection() {
         try {
